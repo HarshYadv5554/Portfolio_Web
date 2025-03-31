@@ -19,7 +19,7 @@ type ProjectCardProps = {
 	image: string;
 	source_code_link?: string;
 	deploy_link: string;
-	platform: "Netlify" | "Vercel" | "Figma" | "Wordpress" | "Web"
+	platform: string;
 };
 
 const ProjectCard = ({
