@@ -23,7 +23,11 @@ const Stars = (props: any) => {
 			if (ref.current) {
 				ref.current.geometry.dispose();
 				if (ref.current.material) {
-					ref.current.material.dispose();
+					if (Array.isArray(ref.current.material)) {
+						ref.current.material.forEach(material => material.dispose());
+					} else {
+						ref.current.material.dispose();
+					}
 				}
 			}
 		};
